@@ -4,10 +4,10 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "build": "babel lib -d dist",
-    "test": "node ./tests/e2e && standard --fix",
+    "build": "babel lib test -d dist/",
+    "test": "node ./test/e2e && standard --fix",
     "clean": "rm -rf dist",
-    "runAll": "npm run clean && npm run build && npm run test"
+    "all": "npm run clean && npm run build && npm run test"
   },
   "author": "",
   "license": "MIT",
@@ -21,7 +21,7 @@
     "tape": "^4.6.3"
   },
   "dependencies": {
-    "babel": "^6.23.0",
+    "babel-cli": "^6.23.0",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1"
