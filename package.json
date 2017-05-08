@@ -1,0 +1,29 @@
+{
+  "name": "comment-sense",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "build": "babel lib -d dist",
+    "test": "node ./tests/e2e && standard --fix",
+    "clean": "rm -rf dist",
+    "runAll": "npm run clean && npm run build && npm run test"
+  },
+  "author": "",
+  "license": "MIT",
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "devDependencies": {
+    "standard": "^10.0.2",
+    "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
