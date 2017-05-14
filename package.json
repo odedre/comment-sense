@@ -4,12 +4,14 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "build": "babel lib test -d dist/",
-    "test": "node ./test/e2e && standard --fix",
+    "build": "gulp build",
+    "pretest": "standard --fix",
+    "test": "node ./dist/test/e2e | tap-spec",
     "clean": "rm -rf dist",
-    "all": "npm run clean && npm run build && npm run test"
+    "all": "npm run clean && npm run build && npm run test",
+    "debug": "gulp build && node --inspect --debug-brk ./dist/test/e2e"
   },
-  "author": "",
+  "author": "Oded Reuveny && Doron Tsur",
   "license": "MIT",
   "babel": {
     "presets": [
@@ -20,6 +22,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "standard": "^10.0.2",
+    "tap-spec": "^4.1.1",
     "tape": "^4.6.3"
   },
   "dependencies": {

@@ -1,6 +1,6 @@
 const test = require('tape')
-
-test('e2e', function (t) {
+import cs from '../src'
+test('should support comment style // ', function (t) {
   t.plan(1)
   var testCase = `
     //identity function
@@ -8,5 +8,7 @@ test('e2e', function (t) {
       return x;
     }
   `
+  let result = cs(testCase)
+
   console.log(testCase)
 })
